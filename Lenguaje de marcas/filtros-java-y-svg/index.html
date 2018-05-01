@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Filtros java y SVG</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1>Uso de filtros</h1>
+<br/>
+<script type="text/javascript">
+  </script>
+<p>
+<img id="imagen" src="filtering.jpg" style=" width: 500px; height: 350px;"/>
+</p>
+<input type="button" value="Make Brighness" onclick="makebrightness()">
+<input type="button" value="Make Blur" onclick="makeblur()">
+
+
+<svg>
+
+					<defs>
+						<filter id="embossFilter" >
+  							<feColorMatrix type="luminanceToAlpha" />
+							<feDiffuseLighting diffuseConstant="1" surfaceScale="10" result="diffuse3">
+								<feDistantLight elevation="28" azimuth="90" />
+							</feDiffuseLighting>
+							<feComposite operator="in" in2="diffuse3" />
+						</filter>
+					</defs>
+					
+</svg>
+
+
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

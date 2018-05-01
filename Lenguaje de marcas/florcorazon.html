@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flower Power</title>
+	<style>
+		svg {
+			background: blue;
+			stroke: orange;
+
+
+		}
+	</style>
+</head>
+<body>
+	<svg id="flower" width="800" viewbox="-50 -50 100 100">
+		
+	</svg>
+</body>
+<script>
+	var flower = document.querySelector("#flower");
+	var espaiN = "http://www.w3.org/2000/svg";
+
+	const LEAVES = 5;
+	const INTERIOR = 5;
+	const EXTERIOR = 50;
+
+	var alfa = Math.PI / 2;
+	var beta = Math.PI / LEAVES;
+
+	function point(r, a) {
+		return " " + r * Math.cos(a) + " " + r * Math.sin(a);
+	}
+	document.addEventListener("DOMContentLoaded", function(event) {
+		var shape = document.createElementNS(espaiN, "path");
+		var data = "M " + point(INTERIOR, alfa);
+		for (var i = 0; i < 2 * LEAVES; i++, alfa += beta) {
+			INTERIOR = INTERIOR - 5;
+			data += " C";
+			data += point(EXTERIOR, alfa) + ",";
+			data += point(EXTERIOR, alfa + beta) + ",";
+			data += point(INTERIOR, alfa + beta);
+		}
+		shape.setAttribute("d", data);
+		flower.appendChild(shape);
+	});
+</script>
+</html>

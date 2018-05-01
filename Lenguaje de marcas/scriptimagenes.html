@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Slideshow</title>
+	<style>
+		body { text-align: center; }
+		img { width: 800px; }
+	</style>
+</head>
+<body>
+	<img src="image0.jpg"/>
+	<script>
+		var i = document.querySelector("img"), q = 7, a = 0;
+
+		document.addEventListener("keydown", function(e) {
+			if ((e.keyCode == 37) || (e.keyCode == 39)){
+				a = (a + (e.keyCode - 38) + q) % q;
+				i.src = "image" + a + ".jpg";
+			}
+		});
+	</script>
+</body>
+</html>

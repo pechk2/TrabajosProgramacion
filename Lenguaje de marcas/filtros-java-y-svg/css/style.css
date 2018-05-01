@@ -1,0 +1,16 @@
+canvas{
+  height: 200px;
+  border: 1px solid black;
+}
+h1{
+  font-size: 24pt;
+  color: Lightblue;
+  
+}
+body{
+  margin: 30px;
+}
+input{ 
+  font-size: 14pt;
+color: Blue;
+}

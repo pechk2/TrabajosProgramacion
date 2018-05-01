@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Logotipo</title>
+  
+  
+  
+  
+  
+</head>
+
+<body>
+  
+<canvas id="lienzo1" width="250" height="240">
+<script>
+  var canvas1 = document.getElementById("lienzo1");
+    if (canvas1 && canvas1.getContext) {
+    var ctx = canvas1.getContext("2d");
+      if (ctx) {
+          ctx.fillStyle = "#6ab150";
+          ctx.strokeStyle = "black";
+          ctx.lineWidth = 3;
+                                  
+          var X = 0;
+          var Y = 0;
+          var R = 100;
+                                  
+          var L = 5;
+          // si L == 6 el ángulo es de 2π/6 o sea 60°
+          var rad = (2*Math.PI);
+          // traslada el contexto en el centro del canvas 
+          // para poder girar el contexto alrededor del centro 
+          ctx.translate(canvas1.width/2, canvas1.height/2);
+          //gira el contexto unos 270deg
+          ctx.rotate(3*Math.PI/2);
+          // dibuja el trazado 
+          ctx.beginPath();
+              for(i = 0; i < L; i++ ){
+              x = X + R * Math.cos( rad*i );
+              y = Y + R * Math.sin( rad*i );
+              ctx.lineTo(x, y);
+              }
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+      }
+    }
+  </script>ctx
+  
+</body>
+</html>

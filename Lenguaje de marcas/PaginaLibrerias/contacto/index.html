@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Contactar</title>
+    <script  src="sticker.min.js"></script>
+	<style>
+
+		* {
+  			font-size: 14pt;
+  			font-weight: bold;
+  			color: orange;
+		}
+
+		body, html {
+  			height: 100%;
+  			display: flex;
+  			align-items: center;
+  			justify-content: center;
+		}
+
+		html {
+    		background: url(canvas.jpg) no-repeat center center fixed;
+  			background-size: cover;
+  			overflow: hidden;
+		}
+
+		form {
+			background-color: rgba(255, 255, 255, 0.5);
+			padding: 8px;
+			border-radius: 4px;
+			box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+		}
+
+		input {
+			border-radius: 4px;
+			padding: 4px;
+		}
+
+		input[type="text"] {
+			width: 400px;
+			margin-bottom: 8px;
+		}
+
+		input[type="submit"] {
+		    border: none;
+		}
+
+		div {
+			text-align: right;
+		}
+
+
+
+		.container {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  perspective: 800px;
+	top: 0px;
+
+
+}
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+#card .front {
+  background: (255, 255, 255, 0.1);
+}
+#card .back {
+  background: (255, 0, 0, 0.1);
+  transform: rotateY( 180deg );
+}
+#card.flipped {
+  transform: rotateY( 180deg );
+}
+#card { transform-origin: right center; }
+#card.flipped {
+  transform: translateX( -100% ) rotateY( -180deg );
+}
+
+.sticker {
+
+width: 150px;
+
+height: 150px;
+
+
+
+}
+
+
+
+
+.face .sticker-img {
+
+background-image: url(face.png);
+
+}
+
+		</style>
+
+
+</head>
+<body>
+
+<section class="container" style="top: 0%;">
+  <div id="card" class="front">
+    <figure class="front" style="display: block;">
+    	<form onsubmit=""  style="position: relative; top: 5%;">
+
+    		<p style="text-align: center; font-size: 40px;">Por favor, introduzca sus datos y el motivo de su contacto:</p>
+<aside>
+							<p>Nombre:
+				<input value="Nombre" type="text"></p>
+
+
+			<p>Apellidos:
+
+
+			<input value="Apellidos" type="text"></p>
+
+			<p>Email:
+
+
+			<input value="Email" type="text"></p>
+
+			<p>Teléfono:
+
+
+			<input value="Teléfono" type="text" ></p>
+			<p>Consulta:
+
+
+			<input value="Consulta" type="text" style="height: 400px;"></p>
+
+</br>
+	<input value="Enviar" type="button" onclick="change();">
+
+</aside>
+</form>
+    </figure>
+    <figure class="back">
+
+   		<form name="form2" onsubmit="" action="../index.html" style="position: relative; top: 10%;">
+				<p> Gracias por confiar en nosotros. Le llamaremos lo antes posible.
+   			<input value="Finalizar" type="submit">
+</form>
+    </figure>
+
+  </div>
+</section>
+<a href="http://www.facebook.com">
+<div class="sticker face" style="top: 85%; left: 90%; position:absolute; overflow: visible;"></div>
+</a>
+
+
+
+<script type="text/javascript">
+
+
+
+function change() {
+	var divelement1 = document.getElementById("card");
+	divelement1.className = "flipped";
+	document.querySelector('figure[class="front"]').style.display = "none";
+}
+
+
+</script>
+<script>
+Sticker.init('.sticker');
+</script>
+	</body></html>
